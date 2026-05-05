@@ -1,0 +1,661 @@
+<!--
+    template by jadeprogramma
+    site:   jadeprogramma.neocities.org
+    email:  jadeprogramma@proton.me
+    ko-fi:  ko-fi.com/jadeprogramma
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template: hacker &ctdot; jadeprogramma</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /*
+            template by jadeprogramma
+            site:   jadeprogramma.neocities.org
+            email:  jadeprogramma@proton.me
+            ko-fi:  ko-fi.com/jadeprogramma
+
+        */
+
+        @font-face {
+            font-family: "libertinus-mono";
+            src: url(/assets/fonts/libertinus-mono/libertinusmono-regular.otf);
+        }
+
+        @font-face {
+            font-family: "ttg-2020";
+            src: url(/assets/fonts/tt2020-style-g/TT_G.ttf);
+        }
+
+        html {
+            scrollbar-color: forestgreen palegreen;
+        }
+
+        a {
+            color: aliceblue;
+        }
+
+        body {
+            background-color: black;
+            background-image: url(/assets/markus-spiske-iar-afB0QQw-unsplash.png);
+            background-size: contain;
+            background-size: 15%;
+
+            font-family: "libertinus-mono";
+        }
+
+        button {
+            background-color: lightgreen;
+
+            border-color: forestgreen;
+            border-radius: 0;
+
+            font-family: inherit;
+
+            padding: 4px 30px;
+            margin: 4px;
+
+        }
+
+        button:active {
+            background-color: green;
+        }
+
+        button:hover {
+            font-style: italic;
+        }
+
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+
+            background-color: rgba(0, 0, 0, 0.4);
+
+            text-align: center;
+
+            width: 100%;
+        }
+
+        header {
+            background-color: black;
+
+            color: whitesmoke;
+            font-family: "ttg-2020";
+            font-size: 100px;
+
+            text-align: center;
+        }
+
+        ul li {
+            list-style-position: outside;
+            list-style-type: ">";
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+
+            width: 100%;
+            min-height: 100vh;
+            max-width: 1750px;
+
+            margin: 10px auto;
+        }
+
+        .container-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .ibeam {
+            animation: blink 1s ease-in-out infinite;
+        }
+
+        .placeholder {
+            display: block;
+
+            text-align: center;
+        }
+
+        .scrollbar {
+            scrollbar-color: forestgreen palegreen;
+        }
+
+        .window {
+            background-color: palegreen;
+
+            border-color: palegreen;
+            border-style: solid;
+            border-width: 10px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            color: aliceblue;
+        }
+
+        .window.credits {
+            position: absolute;
+            left: 35vw;
+            top: 20vh;
+
+            z-index: 2;
+
+            visibility: hidden;
+
+            width: 30vw;
+        }
+
+        .window .title-bar {
+            background-color: black;
+            border-width: 2px;
+            border-style: solid;
+            border-color: forestgreen;
+
+            display: flex;
+            justify-content: space-between;
+
+            font-weight: bolder;
+        }
+
+        .window .icon-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .window .icon {
+            text-align: center;
+
+            width: 25px;
+        }
+
+        .window .icon.close {
+            background-color: darkred;
+        }
+
+        .window .icon.close:hover {
+            background-color: firebrick;
+        }
+
+        .window .content {
+            background-color: black;
+
+            border-width: 2px;
+            border-style: solid;
+            border-color: forestgreen;
+        }
+
+        .window .content.nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .window .content.home {
+            display: flex;
+        }
+
+        .window .content.music {
+            display: flex;
+        }
+
+        .window .content.music .album-cover {
+            object-fit: cover;
+            aspect-ratio: 1;
+
+            border-width: 2px;
+            border-style: solid;
+            border-color: forestgreen;
+
+            height: 100px;
+
+            margin: 8px;
+        }
+
+        .window .content.music .music-info {
+            width: 100%;
+        }
+
+        .window .content.music .progress {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            margin: auto 10px;
+        }
+
+        .window .music-info .progress-bar {
+            width: 100%;
+
+            background-color: palegreen;
+
+            border-width: 1px;
+            border-style: solid;
+            border-color: palegreen;
+
+            margin: auto 4px;
+        }
+
+        .window .music-info .progress-bar div.scrubber {
+            background-color: forestgreen;
+
+            border-width: 1px;
+            border-style: solid;
+            border-color: forestgreen;
+
+            width: 5px;
+            height: 5px;
+        }
+
+        .window .content.webrings {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            height: 200px;
+        }
+
+        .window .content .section-img {
+            border-width: 2px;
+            border-style: solid;
+            border-color: forestgreen;
+
+            aspect-ratio: 1;
+
+            object-fit: cover;
+
+            margin: 8px;
+        }
+
+        .window .content.overflow {
+            overflow-y: scroll;
+
+            max-height: 200px;
+        }
+
+        .window.bio .content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .window .content .thumbnail {
+            border-width: 2px;
+            border-style: solid;
+            border-color: forestgreen;
+
+            width: 90px;
+            aspect-ratio: 1;
+
+            object-fit: cover;
+
+            margin: 8px;
+        }
+
+        .window .content .contact-link {
+            text-decoration: none;
+        }
+
+        .window .content .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        .window .content .img-link {
+            text-decoration: none;
+        }
+
+        .window .content p {
+            margin: 10px;
+        }
+
+        .window.placeholder img {
+            object-fit: cover;
+            aspect-ratio: 1;
+
+            width: 100%;
+            height: 200px
+        }
+
+        .window.link-badge .content img {
+            object-fit: none;
+        }
+
+        .window.img img {
+            object-fit: cover;
+            width: 100%;
+            height: auto;
+        }
+
+        .window.link-badge .content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .window.link-badge textarea {
+            background-color: black;
+
+            border-style: solid;
+
+            color: aliceblue;
+            font-family: inherit;
+
+            width: inherit;
+            min-width: inherit;
+
+            height: 100px;
+
+            resize: none;
+        }
+
+        @keyframes blink {
+            50% {opacity: 0%;}
+        }
+    </style>
+</head>
+<body>
+    <header>hacker<span class="ibeam">&VerticalLine;</span></header>
+    <div class="container">
+        <aside class="container-column">
+            <div class="window bio">
+                <div class="title-bar">
+                    <span class="title">bio</span>
+                    <div class="icon-group">
+                        <span class="icon">&#9601;</span>
+                        <span class="icon">&squ;</span>
+                        <span class="icon close">&#9747;</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <ul>
+                        <li><span class="bold">name:</span> ??</li>
+                        <li><span class="bold">pronouns:</span> ??</li>
+                        <li><span class="bold">age:</span> ??</li>
+                        <li><span class="bold">location:</span> ??</li>
+                    </ul>
+                    <img class="thumbnail" src="/assets/nge_shinji.png">
+                </div>
+            </div>
+            <div class="window">
+                <div class="title-bar">
+                    <span class="title">contact</span>
+                    <div class="icon-group">
+                        <span class="icon">&#9601;</span>
+                        <span class="icon">&squ;</span>
+                        <span class="icon close">&#9747;</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <ul>
+                        <li><span class="bold">email:</span> <a class="contact-link" href="mailto:you@email.com">??</a></li>
+                        <li><span class="bold">website:</span> <a class="contact-link" href="#">??</a></li>
+                        <li><span class="bold">website:</span> <a class="contact-link" href="#">??</a></li>
+                        <li><span class="bold">website:</span> <a class="contact-link" href="#">??</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="window img">
+                <div class="title-bar">
+                    <span class="title">image</span>
+                    <div class="icon-group">
+                        <span class="icon">&#9601;</span>
+                        <span class="icon">&squ;</span>
+                        <span class="icon close">&#9747;</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <img src="/assets/nge_asuka.png">
+                </div>
+            </div>
+            <div class="window">
+                <div class="title-bar">
+                    <span class="title">music</span>
+                    <div class="icon-group">
+                        <span class="icon">&#9601;</span>
+                        <span class="icon">&squ;</span>
+                        <span class="icon close">&#9747;</span>
+                    </div>
+                </div>
+                <div class="content music">
+                    <img class="album-cover" src="assets/nge_balcony.png">
+                    <div class="music-info">
+                        <p class="bold">song title</p>
+                        <p>song performer</p>
+                        <div class="progress">
+                            <span class="song-time">00:00</span>
+                            <div class="progress-bar">
+                                <div class="scrubber"></div>
+                            </div>
+                            <span class="song-time">01:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <main class="container-column">
+            <div class="window">
+                <div class="title-bar">
+                    <span class="title">navigation</span>
+                    <div class="icon-group">
+                        <span class="icon">&#9601;</span>
+                        <span class="icon">&squ;</span>
+                        <span class="icon close">&#9747;</span>
+                    </div>
+                </div>
+                <div class="content nav">
+                    <button>page</button>
+                    <button>page</button>
+                    <button>page</button>
+                    <button>page</button>
+                    <button>page</button>
+                </div>
+            </div>
+            <div class="window">
+                <div class="title-bar">
+                    <span class="title">home</span>
+                    <div class="icon-group">
+                        <span class="icon">&#9601;</span>
+                        <span class="icon">&squ;</span>
+                        <span class="icon close">&#9747;</span>
+                    </div>
+                </div>
+                <div class="content home">
+                    <div class="text">
+                        <p>
+                            Beatae molestiae sunt tempore et voluptate quia. Quo adipisci et placeat consequatur et voluptate.
+                            Consequatur rerum corrupti. Facere omnis fuga tempora voluptatem consequatur sunt quis labore. Eos
+                            possimus cupiditate tenetur excepturi vel ut id.
+                        </p>
+                        <p>
+                            Dolores et quas quod. Nihil a qui voluptas velit aliquid maiores. Perferendis molestias temporibus
+                            autem tempora doloribus velit.
+                        </p>
+                        <p>
+                            Amet iste illum consequatur et saepe ipsum saepe. Doloremque nihil est et. Eos optio saepe mollitia
+                            maxime quaerat impedit assumenda iste. At fugit tempora et adipisci quisquam totam cupiditate minus.
+                            Ab reprehenderit voluptates ratione molestiae repellendus.
+                        </p>
+                        <p>
+                            Ea quod tempore sint dolor et nihil. Accusamus vitae et. Est aut ipsum cum excepturi. Minus consectetur
+                            aut reprehenderit dolor. Delectus aperiam accusantium voluptates quae. Aperiam et quia.
+                        </p>
+                    </div>
+                    <img class="section-img" src="assets/nge_lili.png">
+                </div>
+            </div>
+            <div class="window placeholder">
+                <div class="title-bar">
+                    <span class="title">section</span>
+                    <div class="icon-group">
+                        <span class="icon">&#9601;</span>
+                        <span class="icon">&squ;</span>
+                        <span class="icon close">&#9747;</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <img src="assets/nge_timer.gif">
+                </div>
+            </div>
+        </main>
+        <aside class="container-column">
+            <div class="window">
+                <div class="title-bar">
+                    <span class="title">neighborhood</span>
+                    <div class="icon-group">
+                        <span class="icon">&#9601;</span>
+                        <span class="icon">&squ;</span>
+                        <span class="icon close">&#9747;</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <marquee>
+                        <a class="img-link" href="https://jadeprogramma.neocities.org">
+                            <img src="/assets/jadeprogramma_badge.png">
+                        </a>
+                        <a class="img-link" href="https://jadeprogramma.neocities.org">
+                            <img src="/assets/jadeprogramma_badge.png">
+                        </a>
+                        <a class="img-link" href="https://jadeprogramma.neocities.org">
+                            <img src="/assets/jadeprogramma_badge.png">
+                        </a>
+                        <a class="img-link" href="https://jadeprogramma.neocities.org">
+                            <img src="/assets/jadeprogramma_badge.png">
+                        </a>
+                        <a class="img-link" href="https://jadeprogramma.neocities.org">
+                            <img src="/assets/jadeprogramma_badge.png">
+                        </a>
+                        <a class="img-link" href="https://jadeprogramma.neocities.org">
+                            <img src="/assets/jadeprogramma_badge.png">
+                        </a>
+                    </marquee>
+                </div>
+            </div>
+            <div class="window link-badge">
+                <div class="title-bar">
+                    <span class="title">link me</span>
+                    <div class="icon-group">
+                        <span class="icon">&#9601;</span>
+                        <span class="icon">&squ;</span>
+                        <span class="icon close">&#9747;</span>
+                    </div>
+                </div>
+                <div class="content">
+                    <img src="/assets/jadeprogramma_badge.png">
+                    <textarea readonly class="scrollbar"><a href="https://jadeprogramma.neocities.org" alt="jadeprogramma"><img src="https://jadeprogramma.neocities.org/assets/images/my-badge.png"></a></textarea>
+                </div>
+            </div>
+            <div class="window">
+                <div class="title-bar">
+                    <span class="title">updates</span>
+                    <div class="icon-group">
+                        <span class="icon">&#9601;</span>
+                        <span class="icon">&squ;</span>
+                        <span class="icon close">&#9747;</span>
+                    </div>
+                </div>
+                <div class="content overflow scrollbar">
+                    <ul>
+                        <li><span class="bold">05_04_2026:</span> Similique mollitia provident.</li>
+                        <li><span class="bold">04_24_2026:</span> Quasi ipsum consequatur.</li>
+                        <li><span class="bold">04_16_2026:</span> Voluptate rerum alias voluptatem et vero.</li>
+                        <li><span class="bold">04_09_2026:</span> Possimus dicta et.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="window">
+                <div class="title-bar">
+                    <span class="title">webrings</span>
+                    <div class="icon-group">
+                        <span class="icon">&#9601;</span>
+                        <span class="icon">&squ;</span>
+                        <span class="icon close">&#9747;</span>
+                    </div>
+                </div>
+                <div class="content webrings">
+                    <sub class="placeholder">delete this placeholder, then put your webrings here</sub>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <!-- NOTE START: feel free to remove this window div, credits are also at the bottom of this file -->
+    <div class="window credits" id="credits-window">
+        <div class="title-bar">
+            <span class="title">credits</span>
+            <div class="icon-group">
+                <span class="icon">&#9601;</span>
+                <span class="icon">&squ;</span>
+                <span class="icon close">&#9747;</span>
+            </div>
+        </div>
+        <div class="content">
+            <ul>
+                <li>
+                    <span class="bold">background:</span> photo by <a href="https://unsplash.com/@markusspiske" target="_blank">Markus Spiske</a> on <a href="https://unsplash.com/photos/matrix-movie-still-iar-afB0QQw" target="_blank">Unsplash</a>
+                </li>
+                <li>
+                    <span class="bold">featured images:</span> "Neo Genesis Evangelion" by Hideaki Anno
+                </li>
+                <li>
+                    <span class="bold">inspired by:</span> <a href="https://poempuppy.neocities.org/" target="_blank">poempuppy</a>, <a href="https://lilithdev.neocities.org/" target="_blank">lilithdev</a>, Microsoft Windows 8/8.1, "The Matrix" by Lana and Lilly Wachowski
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- NOTE END -->
+    <footer>
+        <!-- NOTE START: would be great if you didn't delete -->
+        <a href="https://jadeprogramma.neocities.org">template by jadeprogramma</a>
+        <!-- NOTE END -->
+        <a href="#" id="credits">credits</a>
+    </footer>
+    <!-- NOTE START: feel free to remove this script if you don't want JavaScript on your site, this is to show credits, which are also at the bottom of this file -->
+    <script>
+        const backgroundContent = document.querySelector(".container");
+        const creditsAnchor = document.getElementById("credits");
+        const creditsWindow = document.getElementById("credits-window");
+        const contentShade = document.createElement("div");
+
+        contentShade.style.width = "100%";
+        contentShade.style.height = "100%";
+        contentShade.style.backgroundColor = "black";
+        contentShade.style.opacity = 0.5;
+        contentShade.style.position = "absolute";
+
+        contentShade.addEventListener("click", function(event) {
+            backgroundContent.removeChild(contentShade);
+
+            creditsWindow.style.visibility = "hidden";
+        });
+
+        creditsAnchor.addEventListener("click", function(event) {
+            backgroundContent.appendChild(contentShade);
+
+            creditsWindow.style.visibility = "visible";
+        });
+    </script>
+    <!-- NOTE END -->
+</body>
+</html>
+
+<!--
+    CREDITS:
+
+    background: photo by Markus Spiske (https://unsplash.com/@markusspiske) on Unsplash (https://unsplash.com/photos/matrix-movie-still-iar-afB0QQw)
+
+    featured images: "Neo Genesis Evangelion" by Hideaki Anno
+
+    inspired by:
+        - poempuppy (https://poempuppy.neocities.org/)
+        - lilithdev (https://lilithdev.neocities.org/)
+        - Microsoft Windows 8/8.1
+        - "The Matrix" by Lana and Lilly Wachowski
+-->
